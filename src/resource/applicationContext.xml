@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:context="http://www.springframework.org/schema/context" 
+		xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+		xsi:schemaLocation=" http://www.springframework.org/schema/beans  
+    					http://www.springframework.org/schema/beans/spring-beans.xsd 
+    					http://www.springframework.org/schema/aop  
+    					http://www.springframework.org/schema/aop/spring-aop.xsd
+    					http://www.springframework.org/schema/context 
+    					http://www.springframework.org/schema/context/spring-context.xsd
+    					http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+	<!-- 引入jdbc配置文件 -->
+	<context:property-placeholder location="classpath:jdbc.properties" />
+
+	<!--创建jdbc数据源 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${driver}" />
+		<property name="url" value="${url}" />
+		<property name="username" value="${username}" />
+		<property name="password" value="${password}" />
+		<property name="initialSize" value="${initialSize}" />
+		<property name="maxActive" value="${maxActive}" />
+		<property name="maxIdle" value="${maxIdle}" />
+		<property name="minIdle" value="${minIdle}" />
+	</bean>
+
+	<!-- 创建SqlSessionFactory，同时指定数据源 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations" value="classpath:config/dao/*.xml" /> 
+	</bean>
+	
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="net.chcbz.weixin.dao" />
+	</bean>
+
+	<bean id="normalServiceImpl" class="net.chcbz.weixin.service.impl.NormalServiceImpl">
+		<property name="articleList">
+			<list>
+				<map>
+					<entry key="title" value="唧唧复唧唧"/>
+					<entry key="description" value=""/>
+					<entry key="picUrl" value="http://xingzuo.chcbz.net/image/10.jpg"/>
+					<entry key="url" value="http://weixin.chcbz.net/"/>
+				</map>
+			</list>
+		</property>
+	</bean>
+
+	<jaxrs:server id="restServer" address="/">
+		<jaxrs:serviceBeans>
+			<ref bean="normalServiceImpl" />
+		</jaxrs:serviceBeans>
+		<jaxrs:extensionMappings>
+			<entry key="json" value="application/json" />
+			<entry key="xml" value="application/xml" />
+		</jaxrs:extensionMappings>
+	</jaxrs:server>
+</beans>

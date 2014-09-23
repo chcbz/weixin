@@ -1,0 +1,461 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>关贸助手</title>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+<link rel="stylesheet" href="js/jquery/jquery.mobile-1.4.2.css">
+<script src="js/jquery/jquery-1.9.1.min.js"></script>
+<script	src="js/jquery/jquery.mobile-1.4.2.min.js"></script>
+</head>
+<body>
+	<div data-role="popup" id="popupMenu" class="ui-content" data-theme="a">
+		<a href="#" data-rel="back" data-role="button" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+		<ul data-role="listview" data-inset="true" style="min-width: 210px;">
+			<li><a data-transition="slide" href="#home">助手首页</a></li>
+			<li><a data-transition="slide" href="#zhengwuchaxun">政务查询</a></li>
+			<li><a data-transition="slide" href="#zixunzhushou">咨询助手</a></li>
+			<li><a data-transition="slide" href="#zhishijinnang">知识锦囊</a></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+	$( function() {
+    	$( "#popupMenu" ).enhanceWithin().popup();
+	});
+	</script>
+	<div data-role="page" id="home">
+		<div data-role="header" data-position="fixed">
+			<h1>关贸助手</h1>
+			<a href="#gerenshezhi" data-role="button"
+				data-icon="user" data-iconpos="notext" class="ui-btn-right"
+				data-transition="slide" data-position-to="window">个人设置</a>
+		</div>
+		<!-- /header -->
+		<div data-role="content">
+			<div class="ui-body ui-body-a ui-corner-all">
+				<label>助手：yao</label>
+				<label>组织：海光报关行</label>
+				<label>业务：报关、报验、报税</label>
+				<label>电话：13701370137</label>
+			</div>
+			<h3 class="ui-bar ui-bar-a" style="margin-bottom: 0px;">我的知识锦囊</h3>
+			<div class="ui-body ui-body-a" style="border-top-width: 0px;">
+			<ul data-role="listview">
+				<li><a href="#haiguanfalvmingxi">
+					<h2>海关总署令第219号（《中华人民共和国海关加工贸易货物监管办法》）</h2>
+				</a></li>
+				<li><a href="#haiguanfalvmingxi">
+					<h2>海关总署令第217号（《中华人民共和国海关进口货物直接退运管理办法》）</h2>
+				</a></li>
+				<li><a href="#haiguanfalvmingxi">
+					<h2>海关总署公告2014年第20号（关于正式实施中韩海关“经认证的经营者（AEO）”互认的公告）</h2>
+				</a></li>
+				<li><a href="#haiguanfalvmingxi">
+					<h2>海关总署公告2014年第19号（关于进口原产于新西兰的乳酪实施特殊保障措施的公告）</h2>
+				</a></li>
+				<li><a href="#haiguanfalvmingxi">
+					<h2>海关总署令第215号（《中华人民共和国海关政府信息公开办法》）</h2>
+				</a></li>
+			</ul>
+			</div>
+		</div>
+		<!-- /content -->
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#popupAssistant" data-rel="popup" data-position-to="window"
+						data-role="button" data-icon="star"
+						data-transition="pop">助手</a>
+						<div data-role="popup" id="popupAssistant">
+							<ul data-role="listview" data-inset="true"
+								style="min-width: 210px;">
+								<li><a href="#">邮件</a></li>
+								<li><a href="#">电话</a></li>
+							</ul>
+						</div></li>
+					<li><a href="#popupMenu" data-rel="popup"
+						data-role="button" data-icon="grid" data-position-to="window"
+						data-transition="pop">更多</a></li>
+					<li><a href="#popupCustomService" data-rel="popup"
+						data-role="button" data-icon="info"
+						data-transition="pop">客服</a></li>
+				</ul>
+			</div>
+			<!-- /navbar -->
+		</div>
+		<!-- /header -->
+	</div>
+	<!-- /page -->
+	
+	<div data-role="page" id="gerenshezhi">
+		<div data-role="header" data-position="fixed">
+			<a href="javascript:window.history.back();" data-role="button" data-icon="arrow-l" data-iconpos="notext"></a>
+			<h1>个人设置</h1>
+			<a href="#saveSuccess" data-role="button" data-rel="popup"
+				data-icon="check" data-iconpos="notext" class="ui-btn-right"
+				data-transition="pop" data-position-to="window">保存</a>
+			<div data-role="popup" id="saveSuccess" class="ui-content" data-theme="a">
+				<p>保存成功</p>
+			</div>
+		</div>
+		<div data-role="content">
+			<label for="grsz_xm">姓名:</label>
+			<input type="text" name="grsz_xm" id="grsz_xm" value="">
+			<label for="grsz_zz">组织:</label>
+			<input type="text" name="grsz_zz" id="grsz_zz" value="">
+			<label for="grsz_yw">业务:</label>
+			<input type="text" name="grsz_yw" id="grsz_yw" value="">
+			<label for="grsz_dh">电话:</label>
+			<input type="text" name="grsz_dh" id="grsz_dh" value="">
+			<label for="grsz_grzy">个人主页:</label>
+			<input type="text" name="grsz_grzy" id="grsz_grzy" value="">
+		</div>
+		<div data-role="footer" data-position="fixed">
+			
+		</div>
+	</div>
+	
+	<div data-role="page" id="zhengwuchaxun">
+		<div data-role="header" data-position="fixed">
+			<a href="javascript:window.history.back(-1);" data-role="button" data-icon="arrow-l" data-iconpos="notext"></a>
+			<h1>海关法律法规查询</h1>
+			<a href="#popupMenu" data-rel="popup" data-role="button"
+				data-icon="bars" data-iconpos="notext" class="ui-btn-right"
+				data-transition="pop" data-position-to="window">菜单</a>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview">
+				<li><a data-transition="slide" href="#baoguanchaxun">
+					<h2>报关查询</h2>
+				</a></li>
+				<li><a data-transition="slide" href="#shangpinxinxichaxun">
+					<h2>商品信息查询</h2>
+				</a></li>
+				<li><a data-transition="slide" href="#haiguanfalvchaxun">
+					<h2>海关法律法规查询</h2>
+				</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			
+		</div>
+	</div>
+	<div data-role="page" id="baoguanchaxun">
+		<div data-role="header" data-position="fixed">
+			<a href="javascript:window.history.back();" data-role="button" data-icon="arrow-l" data-iconpos="notext"></a>
+			<h1>报关状态查询</h1>
+			<a href="#popupMenu" data-rel="popup" data-role="button"
+				data-icon="bars" data-iconpos="notext" class="ui-btn-right"
+				data-transition="pop" data-position-to="window">菜单</a>
+		</div>
+		<div data-role="content">
+			<label for="text-basic">报关单号:</label>
+			<input type="text" name="bgcx_bgdh" id="bgcx_bgdh" value="">
+			<label for="text-basic">验证码:</label>
+			<input type="text" name="bgcx_yzm" id="bgcx_yzm" value="">
+			<label for="text-basic">说明：验证码有大小写之分</label>
+			<a href="#baoguanchaxun1" class="ui-shadow ui-btn ui-corner-all ui-btn-inline">查询确认</a>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			
+		</div>
+	</div>
+	<div data-role="page" id="baoguanchaxun1">
+		<div data-role="header" data-position="fixed">
+			<a href="javascript:window.history.back();" data-role="button" data-icon="arrow-l" data-iconpos="notext"></a>
+			<h1>报关状态查询</h1>
+			<a href="#popupMenu" data-rel="popup" data-role="button"
+				data-icon="bars" data-iconpos="notext" class="ui-btn-right"
+				data-transition="pop" data-position-to="window">菜单</a>
+		</div>
+		<div data-role="content">
+			<label for="text-basic">报关单号:</label>
+			<input type="text" name="bgcx_bgdh" id="bgcx_bgdh" value="146546546546">
+			<label for="text-basic">验证码:</label>
+			<input type="text" name="bgcx_yzm" id="bgcx_yzm" value="">
+			<label for="text-basic">说明：验证码有大小写之分</label>
+			<a href="#baoguanchaxun" class="ui-shadow ui-btn ui-corner-all ui-btn-inline">查询确认</a>
+		</div>
+		<label style="color:red;">放行环节：已放行</label>
+		<div data-role="footer" data-position="fixed">
+			
+		</div>
+	</div>
+	<div data-role="page" id="shangpinxinxichaxun">
+		<div data-role="header" data-position="fixed">
+			<a href="javascript:window.history.back();" data-role="button" data-icon="arrow-l" data-iconpos="notext"></a>
+			<h1>商品信息查询</h1>
+			<a href="#popupMenu" data-rel="popup" data-role="button"
+				data-icon="bars" data-iconpos="notext" class="ui-btn-right"
+				data-transition="pop" data-position-to="window">菜单</a>
+		</div>
+		<div data-role="content">
+			<label for="text-basic">商品名称或编码:</label>
+			<input type="text" name="spxxcx_mc" id="spxxcx_mc" value="">
+			<label for="text-basic">验证码:</label>
+			<input type="text" name="spxxcx_yzm" id="spxxcx_yzm" value="">
+			<label for="text-basic">说明：允许模糊查询，但每次只能输入一种商品名称；验证码有大小写之分</label>
+			<a href="#shangpinxinxiliebiao" class="ui-shadow ui-btn ui-corner-all ui-btn-inline">查询确认</a>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			
+		</div>
+	</div>
+	<div data-role="page" id="shangpinxinxiliebiao">
+		<div data-role="header" data-position="fixed">
+			<a href="javascript:window.history.back();" data-role="button" data-icon="arrow-l" data-iconpos="notext"></a>
+			<h1>商品信息查询</h1>
+			<a href="#popupMenu" data-rel="popup" data-role="button"
+				data-icon="bars" data-iconpos="notext" class="ui-btn-right"
+				data-transition="pop" data-position-to="window">菜单</a>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview">
+				<li><a href="#shangpinxinximingxi" data-transition="slide">
+						<h2>0602909199</h2>
+						<p>苹果(种苗)</p>
+				</a></li>
+				<li><a href="#shangpinxinximingxi" data-transition="slide">
+						<h2>0808100000</h2>
+						<p>鲜苹果</p>
+				</a></li>
+				<li><a href="#shangpinxinximingxi" data-transition="slide">
+						<h2>0808100000</h2>
+						<p>红苹果</p>
+				</a></li>
+				<li><a href="#shangpinxinximingxi" data-transition="slide">
+						<h2>0813500000</h2>
+						<p>玛莉安妮特级热带杂果干12X170G(菠萝干.木瓜干.葡萄干.苹果干)</p>
+				</a></li>
+				<li><a href="#shangpinxinximingxi" data-transition="slide">
+						<h2>1704900000</h2>
+						<p>棒棒糖 不含可可 CHUPA CHUPS LOLLY POP(成份糖糖浆苹果樱桃蓝莓菠萝柠檬120克/包)</p>
+				</a></li>
+				<li><a href="#shangpinxinximingxi" data-transition="slide">
+						<h2>2009710000</h2>
+						<p>高登塞克苹果汁 非冷冻,20摄氏度 GOLDEN CIRCLE
+							APPLE(成:99%苹果汁,维生素C,白利糖浓度11.2-11.4 0.35L/P)</p>
+				</a></li>
+				<li>
+					<!-- <a href="#" value="12" onclick="javascript:alert(this.value);">加载更多</a> -->
+					<button class="ui-btn"
+						onclick="javascript:this.parentNode.style.display='none';$('.hidden_lst').css('display','block');">加载更多</button>
+				</li>
+				<li style="display: none;" class="hidden_lst"><a
+					href="#shangpinxinximingxi" data-transition="slide">
+						<h2>2009790000</h2>
+						<p>白利糖浓度超过20的苹果汁(未发酵及未加酒精的)</p>
+				</a></li>
+				<li style="display: none;" class="hidden_lst"><a
+					href="#shangpinxinximingxi" data-transition="slide">
+						<h2>2009790000</h2>
+						<p>浓缩苹果汁 大于70百利度</p>
+				</a></li>
+				<li style="display: none;" class="hidden_lst"><a
+					href="#shangpinxinximingxi" data-transition="slide">
+						<h2>2009790000</h2>
+						<p>恒兴产非冷冻浓缩6倍苹果汁(白利度70% 275千克/袋)</p>
+				</a></li>
+				<li style="display: none;" class="hidden_lst"><a
+					href="#shangpinxinximingxi" data-transition="slide">
+						<h2>2009901000</h2>
+						<p>鲜谷牌浓味苹果芒果汁饮料APPLE&MANGO
+							JUICE,鲜谷牌.(400ML/瓶.83.9%鲜榨苹果汁16%芒果浆.)</p>
+				</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			
+		</div>
+	</div>
+	<div data-role="page" id="shangpinxinximingxi">
+		<div data-role="header" data-position="fixed">
+			<a href="javascript:window.history.back(-1);" data-role="button" data-icon="arrow-l" data-iconpos="notext"></a>
+			<h1>商品信息查询</h1>
+			<a href="#popupMenu" data-rel="popup" data-role="button"
+				data-icon="bars" data-iconpos="notext" class="ui-btn-right"
+				data-transition="pop" data-position-to="window">菜单</a>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview">
+				<li>
+					<h2>商品编号</h2>
+					<p>0602909199</p>
+				</li>
+				<li>
+					<h2>商品名称</h2>
+					<p>其他种用苗木</p>
+				</li>
+				<li>
+					<h2>最低税率</h2>
+					<p>0.00000</p>
+				</li>
+				<li>
+					<h2>普通税率</h2>
+					<p>0.00000</p>
+				</li>
+				<li>
+					<h2>出口税率</h2>
+					<p>0.00000</p>
+				</li>
+				<li>
+					<h2>增值税率</h2>
+					<p>0.13000</p>
+				</li>
+				<li>
+					<h2>消费税率</h2>
+					<p>0.00000</p>
+				</li>
+				<li>
+					<h2>计量单位</h2>
+					<p>株(千克)</p>
+				</li>
+				<li><a href="#jianguantiaojian">
+					<h2>监管条件</h2>
+					<p>AB</p>
+				</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			
+		</div>
+	</div>
+	<div data-role="page" id="jianguantiaojian">
+		<div data-role="header" data-position="fixed">
+			<a href="javascript:window.history.back(-1);" data-role="button" data-icon="arrow-l" data-iconpos="notext"></a>
+			<h1>商品信息查询</h1>
+			<a href="#popupMenu" data-rel="popup" data-role="button"
+				data-icon="bars" data-iconpos="notext" class="ui-btn-right"
+				data-transition="pop" data-position-to="window">菜单</a>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview">
+				<li>
+					<h2>A 入境货物通关单 进口</h2>
+				</li>
+				<li>
+					<h2>B 出境货物通关单 出口</h2>
+				</li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			
+		</div>
+	</div>
+	<div data-role="page" id="haiguanfalvchaxun">
+		<div data-role="header" data-position="fixed">
+			<a href="javascript:window.history.back(-1);" data-role="button" data-icon="arrow-l" data-iconpos="notext"></a>
+			<h1>海关法律法规查询</h1>
+			<a href="#popupMenu" data-rel="popup" data-role="button"
+				data-icon="bars" data-iconpos="notext" class="ui-btn-right"
+				data-transition="pop" data-position-to="window">菜单</a>
+		</div>
+		<div data-role="content">
+			<label for="text-basic">标题:</label>
+			<input type="text" name="hgflcx_bt" id="hgflcx_bt" value="">
+			<label for="text-basic">发文机关:</label>
+			<input type="text" name="hgflcx_fwjg" id="hgflcx_fwjg" value="">
+			<label for="text-basic">文号:</label>
+			<input type="text" name="hgflcx_wh" id="hgflcx_wh" value="">
+			<a href="#haiguanfalvliebiao" class="ui-shadow ui-btn ui-corner-all ui-btn-inline">查询确认</a>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			
+		</div>
+	</div>
+	<div data-role="page" id="haiguanfalvliebiao">
+		<div data-role="header" data-position="fixed">
+			<a href="javascript:window.history.back(-1);" data-role="button" data-icon="arrow-l" data-iconpos="notext"></a>
+			<h1>海关法律法规查询</h1>
+			<a href="#popupMenu" data-rel="popup" data-role="button"
+				data-icon="bars" data-iconpos="notext" class="ui-btn-right"
+				data-transition="pop" data-position-to="window">菜单</a>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview">
+				<li><a href="#haiguanfalvmingxi">
+					<h2>海关总署令第219号（《中华人民共和国海关加工贸易货物监管办法》）</h2>
+				</a></li>
+				<li><a href="#haiguanfalvmingxi">
+					<h2>海关总署令第217号（《中华人民共和国海关进口货物直接退运管理办法》）</h2>
+				</a></li>
+				<li><a href="#haiguanfalvmingxi">
+					<h2>海关总署公告2014年第20号（关于正式实施中韩海关“经认证的经营者（AEO）”互认的公告）</h2>
+				</a></li>
+				<li><a href="#haiguanfalvmingxi">
+					<h2>海关总署公告2014年第19号（关于进口原产于新西兰的乳酪实施特殊保障措施的公告）</h2>
+				</a></li>
+				<li><a href="#haiguanfalvmingxi">
+					<h2>海关总署令第215号（《中华人民共和国海关政府信息公开办法》）</h2>
+				</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			
+		</div>
+	</div>
+	<div data-role="page" id="haiguanfalvmingxi">
+		<div data-role="header" data-position="fixed">
+			<a href="javascript:window.history.back(-1);" data-role="button" data-icon="arrow-l" data-iconpos="notext"></a>
+			<h1>海关法律法规查询</h1>
+			<a href="#popupMenu" data-rel="popup" data-role="button"
+				data-icon="bars" data-iconpos="notext" class="ui-btn-right"
+				data-transition="pop" data-position-to="window">菜单</a>
+		</div>
+		<div data-role="content">
+			<TABLE width="100%" class=contWords border=0 cellSpacing=0
+				cellPadding=0>
+				<TBODY>
+					<TR>
+						<TD><SPAN>【法规类型】</SPAN>海关规章</TD>
+						<TD><SPAN>【内容类别】</SPAN>加工贸易保税监管类</TD>
+					</TR>
+					<TR>
+						<TD><SPAN>【文 号】</SPAN>署令〔2014〕219号</TD>
+						<TD><SPAN>【发文机关】</SPAN>海关总署</TD>
+					</TR>
+					<TR>
+						<TD><SPAN>【发布日期】</SPAN>2014-3-12</TD>
+						<TD><SPAN>【生效日期】</SPAN>2014-3-12</TD>
+					</TR>
+					<TR>
+						<TD><SPAN>【效 力】</SPAN>[有效]</TD>
+						<TD><SPAN></SPAN></TD>
+					</TR>
+					<TR>
+						<TD><SPAN>【效力说明】</SPAN></TD>
+						<TD><SPAN></SPAN></TD>
+					</TR>
+				</TBODY>
+			</TABLE>
+			<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				《中华人民共和国海关加工贸易货物监管办法》已于2014年2月13日经海关总署署务会议审议通过，现予公布，自公布之日起施行。2004年2月26日以海关总署令第113号发布，并以海关总署令第168号、195号修改的《中华人民共和国海关对加工贸易货物监管办法》同时废止</P>
+			<P>
+				&nbsp;<BR> 署&nbsp;&nbsp; 长&nbsp; <BR> 2014年3月12日<BR>
+			</P>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			
+		</div>
+	</div>
+	<div data-role="page" id="zixunzhushou">
+		<div data-role="header" data-position="fixed">
+			<a href="javascript:window.history.back();" data-role="button" data-icon="arrow-l" data-iconpos="notext"></a>
+			<h1>咨询助手</h1>
+			<a href="#popupMenu" data-rel="popup" data-role="button"
+				data-icon="bars" data-iconpos="notext" class="ui-btn-right"
+				data-transition="pop" data-position-to="window">菜单</a>
+		</div>
+		<div data-role="content">
+			<label for="textarea">请输入您要咨询的内容：</label>
+			<textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+			<a href="#haiguanfalvliebiao" class="ui-shadow ui-btn ui-corner-all ui-btn-inline">提交</a>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			
+		</div>
+	</div>
+</body>
+</html>
